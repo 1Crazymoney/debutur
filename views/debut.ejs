@@ -1,0 +1,24 @@
+<body class="<%= user.theme %>">
+  <div class="debut">
+    <img src="<%= user.avatar %>" class="debut-avatar" draggable="false" />
+    <h1><%= user.displayName %></h1>
+    <p><%= user.about %></p>
+  
+    <% if (user.mainLinkURL.length > 0 && user.mainLinkTitle.length > 0) { %>
+    <a class="custom-link" href="<%= user.mainLinkURL %>"><%= user.mainLinkTitle %></a>
+    <% } %> <% if (user.secondLinkURL.length > 0 && user.secondLinkTitle.length > 0) { %>
+    <a class="custom-link" href="<%= user.secondLinkURL %>"><%= user.secondLinkTitle %></a>
+    <% } %> <% if (user.thirdLinkURL.length > 0 && user.thirdLinkTitle.length > 0) { %>
+    <a class="custom-link" href="<%= user.thirdLinkURL %>"><%= user.thirdLinkTitle %></a>
+    <% } %> <% if (user.fourthLinkURL.length > 0 && user.fourthLinkTitle.length > 0) { %>
+    <a class="custom-link" href="<%= user.fourthLinkURL %>"><%= user.fourthLinkTitle %></a>
+    <% } %> <% if (user.fifthLinkURL.length > 0 && user.fifthLinkTitle.length > 0) { %>
+    <a class="custom-link" href="<%= user.fifthLinkURL %>"><%= user.fifthLinkTitle %></a>
+    <% } %> <% if (curUser && curUser.name === user.name) { %>
+    <a href="/edit/<%= curUser.name %>" draggable="false" class="edit-page"
+      >Edit Page</a
+    >
+    <% } %>
+  </div>
+  
+</body>

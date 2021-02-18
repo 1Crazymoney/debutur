@@ -1,0 +1,179 @@
+.login {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	text-align: left;
+	margin: 50px 0;
+	height: 100%;
+}
+
+.register {
+	margin: 50px 0;
+}
+
+.login > h1,
+.login > .alert,
+.login > p {
+	text-align: center;
+	width: 100%;
+}
+
+.login .emoji {
+	font-size: 48px;
+}
+
+.greeting {
+	margin: 50px 0 10px 0;
+}
+
+.alert {
+	color: #ff4d4d;
+}
+
+.success {
+	color: #4dffa6;
+}
+
+.login form {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	margin-top: 30px;
+}
+
+.login form div {
+	margin: 20px 0;
+}
+
+form i {
+	color: #a5adc6;
+	margin: 0 20px;
+	background: #eaeeff;
+	font-size: 18px;
+	transition: 0.1s linear;
+	padding: 10px;
+	border-radius: 100px;
+}
+
+form span {
+	margin: 20px 0;
+}
+
+.login > form > div {
+	display: flex;
+	align-items: center;
+	padding: 10px;
+	border-radius: 100px;
+	margin: 20px 0;
+}
+
+.login-input {
+	outline: none;
+	border: none;
+	font-size: 16px;
+	color: #a5adc6;
+	background: transparent;
+	transition: 0.3s linear;
+}
+
+input:focus {
+	color: #747b92;
+}
+
+form button {
+	background: linear-gradient(135deg, #916aff 0%, #6788ff 100%);
+	outline: none;
+	border: none;
+	color: #f8f8f8;
+	padding: 10px;
+	font-size: 16px;
+	border-radius: 100px;
+	box-shadow: 5px 5px 15px 0px #0000002c;
+	width: 150px;
+	margin: 10px 0;
+	transition: 0.1s linear;
+}
+
+form button:hover {
+	cursor: pointer;
+	transform: scale(1.05, 1.05);
+}
+
+.login a {
+	margin-top: 30px;
+	color: #868da0;
+	font-size: 16px;
+	text-decoration: none;
+	text-align: center;
+	background: transparent;
+	box-shadow: none;
+}
+
+.login a i {
+	margin-left: 5px;
+	transition: 0.1s linear;
+}
+
+.login a:hover i {
+	transform: translateX(5px);
+}
+
+@media (max-width: 400px) {
+	.login-input {
+		width: 200px;
+	}
+}
+
+button.avatar {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	padding: 10px;
+	border-radius: 100px;
+	color: white;
+	background: linear-gradient(135deg, #916aff 0%, #6788ff 100%);
+	transition: 0.1s linear;
+	width: 200px;
+}
+
+button.avatar:hover {
+	transform: scale(1.05, 1.05);
+	cursor: pointer;
+}
+
+button i {
+	padding: 0;
+	margin: 0;
+	margin-right: 10px;
+	background: transparent;
+	color: white;
+	font-size: 30px;
+}
+
+#avatar-preview {
+	width: 150px;
+	border-radius: 200px;
+}
+
+.avatar-input {
+	display: none;
+}
+
+.terms-agreement {
+	text-align: center;
+	color: #757575;
+	margin: 10px;
+}
+
+.terms-agreement a {
+	color: #7e61ff;
+	margin: 0;
+	padding: 0;
+}
+
+@media (min-height: 1000px) {
+	.login {
+		height: 90vh;
+	}
+}
