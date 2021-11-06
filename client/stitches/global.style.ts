@@ -16,9 +16,16 @@ const globalStyle = globalCss({
     overflowX: 'hidden',
   },
   '::selection': {
-    background: '#4560F060',
+    background: '#000',
+    color: '#fff',
+  },
+  '::placeholder': {
+    color: '$white5',
   },
   img: {
+    userSelect: 'none',
+  },
+  button: {
     userSelect: 'none',
   },
   'body::-webkit-scrollbar': {
@@ -29,6 +36,13 @@ const globalStyle = globalCss({
   },
   'body::-webkit-scrollbar-thumb': {
     background: '$main',
+  },
+  '@font-face': {
+    fontFamily: 'GTWalsheimPro',
+    src: 'url(/GTWalsheimPro-Regular.ttf)',
+    fontStyle: 'normal',
+    fontWeight: 400,
+    fontDisplay: 'swap',
   },
 })
 

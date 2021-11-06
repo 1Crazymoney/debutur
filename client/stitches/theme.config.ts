@@ -19,7 +19,7 @@ export const { css, styled, globalCss, getCssText, keyframes } = createStitches(
         6: '48px',
       },
       fonts: {
-        main: 'Sora, sans-serif',
+        main: 'GTWelsheim Pro, sans-serif',
       },
     },
     media: {
