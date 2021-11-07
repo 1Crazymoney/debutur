@@ -11,7 +11,6 @@ import generateUsername from '../utils/generateUsername.js'
 
 import { Strategy as GitHubStrategy } from 'passport-github2'
 import { Strategy as TwitterStrategy } from 'passport-twitter'
-import { Strategy as DribbbleStrategy } from 'passport-dribbble'
 
 interface Google extends Profile {
   id: string
@@ -47,11 +46,11 @@ interface Twitter {
 export const GoogleAuthCallback = async (
   accessToken: string,
   refreshToken: string,
-  profile: Google,
+  profile: any,
   done: VerifyCallback
 ) => {
   try {
-    console.log(accessToken, profile)
+    console.log(profile.id)
 
     const user = await prisma.user.findUnique({
       where: {
@@ -60,17 +59,6 @@ export const GoogleAuthCallback = async (
     })
 
     if (user) return done(null, user)
-
-    const existingUser = await prisma.user.findUnique({
-      where: {
-        email: profile._json.email,
-      },
-    })
-
-    if (existingUser) {
-      console.log('User with the same email already exists!')
-      return done(null, existingUser)
-    }
 
     const newUser = await prisma.user.create({
       data: {
@@ -87,7 +75,6 @@ export const GoogleAuthCallback = async (
     return done(null, newUser)
   } catch (err) {
     console.log(err)
-    return done(new Error('Failed!'), false)
   }
 }
 
@@ -168,7 +155,6 @@ passport.use(
       clientID: process.env.GOOGLE_CLIENT_ID,
       clientSecret: process.env.GOOGLE_CLIENT_SECRET,
       callbackURL: '/api/user/auth/google/callback',
-      passReqToCallback: true,
     },
     // @ts-ignore
     GoogleAuthCallback

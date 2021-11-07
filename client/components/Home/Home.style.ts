@@ -1,7 +1,8 @@
 import { styled } from '@stitches/react'
 import { motion } from 'framer-motion'
+import WavyText from '@anims/WavyText'
 
-export const HomeLayout = styled('div', {
+export const HomeLayout = styled(motion.div, {
   display: 'flex',
   flexDirection: 'column',
   justifyContent: 'center',
@@ -9,15 +10,24 @@ export const HomeLayout = styled('div', {
   minHeight: '90vh',
 })
 
-export const HomeHeader = styled('h1', {
-  fontSize: '$5',
-  marginTop: 50,
+export const ContentBox = styled(motion.div, {
+  display: 'flex',
+  flexDirection: 'column',
+  justifyContent: 'center',
+  alignItems: 'center',
+  h1: {
+    fontSize: '$5',
+    marginTop: 50,
+  },
+  p: {
+    fontSize: '$2',
+    margin: '20px 0',
+  },
 })
 
-export const Description = styled('p', {
-  fontSize: '$2',
-  margin: '20px 0',
-})
+export const HomeHeader = styled(WavyText, {})
+
+export const Description = styled(WavyText, {})
 
 export const FormFieldBox = styled('div', {
   display: 'flex',

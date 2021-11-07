@@ -1,6 +1,6 @@
 import { createStitches } from '@stitches/react'
 
-import { SkyBlue, White } from 'kraftuur'
+import { SkyBlue, White, Black } from 'kraftuur'
 
 export const { css, styled, globalCss, getCssText, keyframes } = createStitches(
   {
@@ -9,6 +9,7 @@ export const { css, styled, globalCss, getCssText, keyframes } = createStitches(
         main: '#00ABFF',
         ...White,
         ...SkyBlue,
+        ...Black,
       },
       fontSizes: {
         1: '14px',

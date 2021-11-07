@@ -3,21 +3,12 @@
     "target": "es5",
     "baseUrl": ".",
     "paths": {
-      "@components/*": [
-        "components/*"
-      ],
-      "@css/*": [
-        "stitches/*"
-      ],
-      "@lib/*": [
-        "lib/*"
-      ]
+      "@components/*": ["components/*"],
+      "@css/*": ["stitches/*"],
+      "@lib/*": ["lib/*"],
+      "@anims/*": ["animations/*"]
     },
-    "lib": [
-      "dom",
-      "dom.iterable",
-      "esnext"
-    ],
+    "lib": ["dom", "dom.iterable", "esnext"],
     "allowJs": false,
     "skipLibCheck": true,
     "strict": true,
@@ -30,17 +21,10 @@
     "isolatedModules": true,
     "jsx": "preserve",
     "noImplicitAny": true,
-    "typeRoots": [
-      "typings"
-    ],
+    "downlevelIteration": true,
+    "typeRoots": ["typings"],
     "incremental": true
   },
-  "include": [
-    "next-env.d.ts",
-    "**/*.ts",
-    "**/*.tsx"
-  ],
-  "exclude": [
-    "node_modules"
-  ]
+  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx"],
+  "exclude": ["node_modules"]
 }
