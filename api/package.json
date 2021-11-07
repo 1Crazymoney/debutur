@@ -1,0 +1,60 @@
+{
+  "version": "0.0.1",
+  "main": "server/dist/src/server.js",
+  "type": "module",
+  "repository": "https://github.com/harshhhdev/debutur",
+  "license": "MIT",
+  "scripts": {
+    "dev": "nodemon dist/server.js",
+    "watch": "tsc -w",
+    "gen": "prisma generate",
+    "migrate": "prisma migrate dev --name init",
+    "migrate:deploy": "prisma migrate deploy",
+    "push": "prisma db push --preview-feature",
+    "clean": "rm -r dist",
+    "debug": "nodemon --inspect dist/src/index.js",
+    "compile": "tsc"
+  },
+  "prisma": {
+    "schema": "prisma/schema.prisma"
+  },
+  "dependencies": {
+    "@prisma/client": "^3.4.1",
+    "@types/cookie-parser": "^1.4.2",
+    "@types/cors": "^2.8.12",
+    "@types/express": "^4.17.13",
+    "@types/express-rate-limit": "^5.1.3",
+    "@types/express-session": "^1.17.4",
+    "@types/jsonwebtoken": "^8.5.5",
+    "@types/morgan": "^1.9.3",
+    "@types/node": "^16.11.6",
+    "@types/passport": "^1.0.7",
+    "@types/passport-github2": "^1.2.5",
+    "@types/passport-google-oauth20": "^2.0.11",
+    "@types/passport-twitter": "^1.0.37",
+    "body-parser": "^1.19.0",
+    "compression": "^1.7.4",
+    "cookie-parser": "^1.4.5",
+    "cors": "^2.8.5",
+    "express": "^4.17.1",
+    "express-rate-limit": "^5.5.1",
+    "express-session": "^1.17.2",
+    "helmet": "^4.6.0",
+    "jsonwebtoken": "^8.5.1",
+    "morgan": "^1.10.0",
+    "passport": "^0.5.0",
+    "passport-dribbble": "^1.0.1",
+    "passport-facebook": "^3.0.0",
+    "passport-github2": "^0.1.12",
+    "passport-google-oauth20": "^2.0.0",
+    "passport-linkedin-oauth2": "^2.0.0",
+    "passport-twitter": "^1.0.4",
+    "prisma": "^3.4.1",
+    "typescript": "^4.4.4",
+    "xss-clean": "^0.1.1"
+  },
+  "devDependencies": {
+    "dotenv": "^10.0.0",
+    "nodemon": "^2.0.14"
+  }
+}

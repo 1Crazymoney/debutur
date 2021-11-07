@@ -3,10 +3,10 @@ import Image from 'next/image'
 
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import {
-  faApple,
-  faFacebook,
+  faDribbble,
   faGithub,
   faGoogle,
+  faTwitter,
 } from '@fortawesome/free-brands-svg-icons'
 import * as S from './Home.style'
 
@@ -23,10 +23,7 @@ const Home: React.FC = () => {
         <FontAwesomeIcon icon={faGithub} /> Continue with GitHub
       </S.LoginButton>
       <S.LoginButton whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.9 }}>
-        <FontAwesomeIcon icon={faFacebook} /> Continue with Facebook
-      </S.LoginButton>
-      <S.LoginButton whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.9 }}>
-        <FontAwesomeIcon icon={faApple} /> Continue with Apple
+        <FontAwesomeIcon icon={faTwitter} /> Continue with Twitter
       </S.LoginButton>
     </S.HomeLayout>
   )

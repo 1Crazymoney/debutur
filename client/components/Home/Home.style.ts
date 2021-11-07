@@ -30,7 +30,7 @@ export const FormFieldBox = styled('div', {
     height: 30,
     color: '#a5adc6',
     padding: 0,
-    marginRight: 50,
+    margin: '0px 0px 50px 50px',
   },
 })
 
@@ -61,7 +61,7 @@ export const LoginButton = styled(motion.button, {
   cursor: 'pointer',
   width: 350,
   svg: {
-    marginRight: 10,
+    margin: '0px 10px 1px 0px',
   },
 })
 

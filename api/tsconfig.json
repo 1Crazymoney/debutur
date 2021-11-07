@@ -1,0 +1,20 @@
+{
+  "compilerOptions": {
+    "esModuleInterop": true,
+    "lib": ["ESNext"],
+    "module": "ESNext",
+    "noImplicitAny": true,
+    "noUnusedParameters": false,
+    "outDir": "dist",
+    "pretty": true,
+    "rootDir": "./src",
+    "skipLibCheck": true,
+    "moduleResolution": "node",
+    "strict": true,
+    "target": "esnext",
+    "typeRoots": ["typings"]
+  },
+  "ts-node": {
+    "pretty": true
+  }
+}
