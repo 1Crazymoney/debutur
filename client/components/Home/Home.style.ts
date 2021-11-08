@@ -56,7 +56,7 @@ export const FormField = styled('input', {
   },
 })
 
-export const LoginButton = styled(motion.button, {
+export const LoginButton = styled(motion.a, {
   display: 'flex',
   alignItems: 'center',
   justifyContent: 'center',
@@ -70,6 +70,7 @@ export const LoginButton = styled(motion.button, {
   marginTop: 20,
   cursor: 'pointer',
   width: 350,
+  textDecoration: 'none',
   svg: {
     margin: '0px 10px 1px 0px',
   },

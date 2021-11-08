@@ -1,9 +1,9 @@
 import React from 'react'
+
 import Image from 'next/image'
 
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import {
-  faDribbble,
   faGithub,
   faGoogle,
   faTwitter,
@@ -67,6 +67,7 @@ const Home: React.FC = () => {
           whileHover={{ scale: 1.05 }}
           whileTap={{ scale: 0.9 }}
           variants={button}
+          href='http://localhost:3001/api/user/auth/google'
         >
           <FontAwesomeIcon icon={faGoogle} /> Continue with Google
         </S.LoginButton>
@@ -74,6 +75,7 @@ const Home: React.FC = () => {
           whileHover={{ scale: 1.05 }}
           whileTap={{ scale: 0.9 }}
           variants={button}
+          href='http://localhost:3001/api/user/auth/google'
         >
           <FontAwesomeIcon icon={faGithub} /> Continue with GitHub
         </S.LoginButton>
@@ -81,6 +83,7 @@ const Home: React.FC = () => {
           whileHover={{ scale: 1.05 }}
           whileTap={{ scale: 0.9 }}
           variants={button}
+          href='http://localhost:3001/api/user/auth/google'
         >
           <FontAwesomeIcon icon={faTwitter} /> Continue with Twitter
         </S.LoginButton>

@@ -13,6 +13,7 @@
     "@fortawesome/free-solid-svg-icons": "^5.15.4",
     "@fortawesome/react-fontawesome": "^0.1.16",
     "@stitches/react": "^1.2.5",
+    "axios": "^0.24.0",
     "framer-motion": "^5.2.1",
     "grapheme-splitter": "^1.0.4",
     "kraftuur": "^1.0.2",

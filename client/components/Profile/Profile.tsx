@@ -2,7 +2,11 @@ import React from 'react'
 
 import * as S from './Profile.style'
 
-const Profile: React.FC = () => {
+const Profile: React.FC<{ avatar: string; name: string; bio: string }> = ({
+  avatar,
+  name,
+  bio,
+}) => {
   const container = {
     visible: {
       transition: {
@@ -43,7 +47,7 @@ const Profile: React.FC = () => {
     <S.ProfileContainer>
       <S.ProfileBox initial='hidden' animate='visible' variants={container}>
         <S.Avatar
-          src='https://avatars.githubusercontent.com/u/69592270'
+          src={avatar}
           alt='profile picture'
           draggable='false'
           initial={{ scale: 0, rotate: 180 }}
@@ -55,11 +59,8 @@ const Profile: React.FC = () => {
             delay: 1,
           }}
         />
-        <S.Name text='Harsh Singh' type='heading1' />
-        <S.Description
-          text="I'm a 15yo web developer & designer"
-          type='paragraph'
-        />
+        <S.Name text={name} type='heading1' />
+        <S.Description text={bio} type='paragraph' />
       </S.ProfileBox>
       <S.ButtonContainer
         variants={buttonContainer}
@@ -72,6 +73,7 @@ const Profile: React.FC = () => {
             whileHover={{ scale: 1.07 }}
             whileTap={{ scale: 0.9 }}
             target='_blank'
+            key={index}
           >
             {btn}
           </S.Button>
