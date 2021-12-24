@@ -20,13 +20,11 @@ const UserProfile: NextPage = () => {
   globalStyle()
 
   axios
-    .get('http://localhost:3001/api/user/auth/' + id)
+    .get(`http://localhost:3001/api/user/auth/${id}`)
     .then((res) => {
       setName(res.data.name)
       setAvatar(res.data.avatar)
       setBio(res.data.about)
-
-      console.log(res.data.name)
     })
     .catch((err) => console.log(err))
 

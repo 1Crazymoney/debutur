@@ -17,6 +17,26 @@ userRouter.get('/:username', async (req: any, res) => {
 
   if (!user) return res.status(404)
   res.send(user)
+  console.log(req.isAuthenticated)
+})
+
+userRouter.put('/:username/edit', async (req: any, res) => {
+  if (!req.isAuthenticated()) return
+
+  const updatedUser = await prisma.user.update({
+    where: {
+      username: req.params.username,
+    },
+    data: {
+      avatar: req.body.avatar,
+      name: req.body.name,
+      about: req.body.bio,
+      theme: req.body.theme,
+    },
+  })
+
+  if (!updatedUser) return res.status(404)
+  res.send(req.body)
 })
 
 userRouter.get(
@@ -30,7 +50,7 @@ userRouter.get(
   '/github/callback',
   passport.authenticate('github', {
     successRedirect: `/api/user/auth/`,
-    failureRedirect: '/auth/github/failure',
+    failureRedirect: '/failure/',
   })
 )
 
@@ -45,7 +65,7 @@ userRouter.get(
   '/google/callback',
   passport.authenticate('google', {
     successRedirect: '/api/',
-    failureRedirect: '/auth/google/failure',
+    failureRedirect: '/failure/',
   })
 )
 
@@ -55,7 +75,7 @@ userRouter.get(
   '/twitter/callback',
   passport.authenticate('twitter', {
     successRedirect: '/api/',
-    failureRedirect: '/auth/twitter/failure',
+    failureRedirect: '/failure/',
   })
 )
 

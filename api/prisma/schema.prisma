@@ -7,14 +7,6 @@ generator client {
     provider = "prisma-client-js"
 }
 
-model Link {
-    id     Int    @id @default(autoincrement())
-    text   String
-    href   String
-    User   User?  @relation(fields: [userId], references: [id])
-    userId String
-}
-
 model User {
     id        String   @id
     username  String   @unique
@@ -24,5 +16,6 @@ model User {
     about     String
     theme     String
     createdAt DateTime @default(now())
-    links     Link[]
+    links     String[]
+    titles    String[]
 }
