@@ -1,19 +1,31 @@
 {
-	"compilerOptions": {
-		"esModuleInterop": true,
-		"lib": ["ESNext"],
-		"module": "ESNext",
-		"noImplicitAny": true,
-		"noUnusedParameters": false,
-		"outDir": "dist",
-		"pretty": true,
-		"rootDir": "./src",
-		"skipLibCheck": true,
-		"moduleResolution": "node",
-		"strict": true,
-		"target": "esnext"
-	},
-	"ts-node": {
-		"pretty": true
-	}
+  "compilerOptions": {
+    "baseUrl": ".",
+    "paths": {
+      "@anims/*": ["anims/*"],
+      "@components/*": ["components/*"],
+      "@hooks/*": ["hooks/*"],
+      "@pub/*": ["public/*"],
+      "@css/*": ["stitches/*"],
+      "@lib/*": ["lib/*"],
+      "@pages/*": ["pages/*"],
+      "@themes/*": ["themes/*"]
+    },
+    "target": "es5",
+    "lib": ["dom", "dom.iterable", "esnext"],
+    "allowJs": true,
+    "skipLibCheck": true,
+    "strict": true,
+    "forceConsistentCasingInFileNames": true,
+    "noEmit": true,
+    "esModuleInterop": true,
+    "module": "esnext",
+    "moduleResolution": "node",
+    "resolveJsonModule": true,
+    "isolatedModules": true,
+    "jsx": "preserve",
+    "incremental": true
+  },
+  "include": ["typings/**/*.ts", "**/*.ts", "**/*.tsx"],
+  "exclude": ["node_modules"]
 }
