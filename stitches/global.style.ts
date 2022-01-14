@@ -1,4 +1,3 @@
-import { Pink } from 'kraftuur'
 import { globalCss } from './theme.config'
 
 const globalStyle = globalCss({
@@ -47,7 +46,7 @@ const globalStyle = globalCss({
   },
   '@font-face': {
     fontFamily: 'Averta',
-    src: 'url(/Averta.ttf)',
+    src: 'url(/Averta-Regular.ttf)',
     fontStyle: 'normal',
     fontWeight: 400,
     fontDisplay: 'swap',
