@@ -1,13 +1,13 @@
 <p align="center">
   <img src="https://raw.githubusercontent.com/harshhhdev/debutur/master/public/Banner.png" />
-  <a href="https://debutur.vercel.app/">
+  <a href="https://dbtr.vercel.app/">
     <h2 align="center">Debutur</h2>
   </a>
 </p> 
 <p align="center">🚀 Create, and personalise your own simple and beautiful homepage</p>
 <p align="center">MongoDB x Dev.to Hackathon 2022</p>
 <p align="center">
-  <a href="https://debutur.vercel.app/">Demo</a>
+  <a href="https://dbtr.vercel.app/">Demo</a>
       ·
   <a href="https://dev.to/harshhhdev/debutur-fa">Dev.to</a>
  </p>
@@ -62,20 +62,20 @@ Server should now be running on [localhost](https://localhost:3000)
 
 # 🔧 Tools Used
 
- - [Next.js](https://github.com/vercel/next.js)
- - [Prisma](https://www.prisma.io/)
- - [TypeScript](https://typescriptlang.org)
- - [Figma](https://figma.com)
- - [next-themes](https://next-themes-example.vercel.app/)
- - [Framer Motion](https://framer.com/motion)
- - [React Spring](https://react-spring.io)
- - [MongoDB Atlas](https://www.mongodb.com/cloud/atlas/)
- - [Stitches](https://stitches.dev/)
- - [NextAuth](https://next-auth.js.org/)
- - [React Toastify](https://fkhadra.github.io/react-toastify/introduction)
- - [Feather Icons](https://feathericons.com/)
- - [Simple Icons](https://simpleicons.org/)
- - [Kraftuur (made by me!)](https://harshhhdev.github.io/kraftuur)
+- [Next.js](https://github.com/vercel/next.js)
+- [Prisma](https://www.prisma.io/)
+- [TypeScript](https://typescriptlang.org)
+- [Figma](https://figma.com)
+- [next-themes](https://next-themes-example.vercel.app/)
+- [Framer Motion](https://framer.com/motion)
+- [React Spring](https://react-spring.io)
+- [MongoDB Atlas](https://www.mongodb.com/cloud/atlas/)
+- [Stitches](https://stitches.dev/)
+- [NextAuth](https://next-auth.js.org/)
+- [React Toastify](https://fkhadra.github.io/react-toastify/introduction)
+- [Feather Icons](https://feathericons.com/)
+- [Simple Icons](https://simpleicons.org/)
+- [Kraftuur (made by me!)](https://harshhhdev.github.io/kraftuur)
 
 # 🤞 Contributing
 
