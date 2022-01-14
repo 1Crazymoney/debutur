@@ -2,7 +2,8 @@ import React from 'react'
 
 import * as S from './Edit.style'
 import * as anims from '@anims/index'
-import { fetcher } from '@lib/fetcher'
+
+import axios from 'axios'
 
 import { useRouter } from 'next/router'
 import { useTheme } from 'next-themes'
@@ -120,7 +121,7 @@ const Edit: React.FC<UserInfo> = ({
     if (nameInputRef.current!.value === '')
       return Error('Name Field Must Not be Empty!')
 
-    fetcher('/api/update', {
+    await axios.post('/api/update', {
       username: username,
       name: nameInputRef.current!.value,
       bio: bioInputRef.current!.value,

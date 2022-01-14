@@ -6,17 +6,10 @@ export default async (req: NextApiRequest, res: NextApiResponse) => {
   const prisma = new PrismaClient()
   const session = await getSession({ req })
 
-  if (session) {
-    const {
-      name,
-      bio,
-      avatar_url,
-      theme,
-      username,
-      buttonLinks,
-      buttonTitles,
-    } = req.body
+  const { name, bio, avatar_url, theme, username, buttonLinks, buttonTitles } =
+    req.body
 
+  if (session) {
     await prisma.profile.update({
       where: {
         login: username,
@@ -30,8 +23,12 @@ export default async (req: NextApiRequest, res: NextApiResponse) => {
         buttonTitles: buttonTitles,
       },
     })
+
+    return res.status(200).end()
   } else
     res.send({
       error: 'User unauthenticated!',
     })
+
+  return res.status(500).end()
 }
