@@ -36,6 +36,8 @@ export const Name = styled(motion.h1, {
 
 export const Description = styled(motion.p, {
   color: '$text',
+  width: '50vw',
+  textAlign: 'center',
 })
 
 export const ButtonContainer = styled(motion.div, {
@@ -51,12 +53,15 @@ export const Button = styled(motion.a, {
   padding: '20px 50px',
   color: '$buttonText',
   background: '$buttonBg',
+  border: '3px solid $buttonBorder',
   fontSize: '$3',
-  border: 'none',
   borderRadius: 10,
   margin: '10px 0',
   textAlign: 'center',
   cursor: 'pointer',
   userSelect: 'none',
   textDecoration: 'none',
+  overflow: 'hidden',
+  whiteSpace: 'nowrap',
+  textOverflow: 'ellipsis',
 })

@@ -104,7 +104,9 @@ const Edit: React.FC<UserInfo> = ({
       ...options,
       {
         text: linkTitleInputRef.current!.value,
-        href: linkUrlInputRef.current!.value,
+        href: linkUrlInputRef.current!.value.startsWith('http')
+          ? linkUrlInputRef.current!.value
+          : `https://${linkUrlInputRef.current!.value}`,
       },
     ])
 
