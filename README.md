@@ -1,118 +1,88 @@
 <p align="center">
-   <br/>
-   <a href="https://next-auth.js.org" target="_blank"><img width="150px" src="https://next-auth.js.org/img/logo/logo-sm.png" /></a>
-   <h3 align="center">NextAuth.js Typescript  <img src="https://upload.wikimedia.org/wikipedia/commons/4/4c/Typescript_logo_2020.svg" width="40" height="24" alt="TypeScript logo"/> Example App</h3>
-   <p align="center">
-   Open Source. Full Stack. Own Your Data.
-   </p>
-   <p align="center" style="align: center;">
-      <a href="https://npm.im/next-auth">
-        <img alt="npm" src="https://img.shields.io/npm/v/next-auth?color=green&label=next-auth">
-      </a>
-      <a href="https://bundlephobia.com/result?p=next-auth-typescript-example">
-        <img src="https://img.shields.io/bundlephobia/minzip/next-auth?label=next-auth" alt="Bundle Size"/>
-      </a>
-      <a href="https://www.npmtrends.com/next-auth">
-        <img src="https://img.shields.io/npm/dm/next-auth?label=next-auth%20downloads" alt="Downloads" />
-      </a>
-   </p>
-</p>
+  <img src="https://raw.githubusercontent.com/harshhhdev/debutur/master/public/Banner.png" />
+  <a href="https://debutur.vercel.app/">
+    <h2 align="center">Debutur</h2>
+  </a>
+</p> 
+<p align="center">🚀 Create, and personalise your own simple and beautiful homepage</p>
+<p align="center">MongoDB x Dev.to Hackathon 2022</p>
+<p align="center">
+  <a href="https://debutur.vercel.app/">Demo</a>
+      ·
+  <a href="https://dev.to/harshhhdev/debutur-fa">Dev.to</a>
+ </p>
 
-## Overview
+# 🚀 Quickstart
 
-This is an example of how to use the [NextAuth.js](https://next-auth.js.org) library to add authentication to a [Next.js](https://nextjs.org) application with Typescript.
-
-Check out the TypeScript [documentation](https://next-auth.js.org/getting-started/typescript).
-
-This example application can be found under [`next-auth-typescript-example.vercel.app`](https://next-auth-typescript-example.vercel.app)
-
-### About NextAuth.js
-
-NextAuth.js is an easy to implement, full-stack (client/server) open source authentication library designed for [Next.js](https://nextjs.org) and [Serverless](https://vercel.com).
-
-Go to [next-auth.js.org](https://next-auth.js.org) for more information and documentation.
-
-> *NextAuth.js is not associated with Vercel or Next.js.*
-
-## Getting Started
-
-### 1. Clone the repository and install dependancies
+Run the website locally
 
 ```
-git clone https://github.com/nextauthjs/next-auth-typescript-example.git
-cd next-auth-typescript-example
-npm install
+git clone https://github.com/harshhhdev/debutur.git
 ```
 
-### 2. Configure your local environment
+## Setting up the project
 
-Copy the .env.local.example file in this directory to .env.local (which will be ignored by Git):
+```bash
+cd debutur
 
-```
-cp .env.local.example .env.local
-```
-
-Add details for one or more providers (e.g. Google, Twitter, GitHub, Email, etc).
-
-#### Database
-
-A database is needed to persist user accounts and to support email sign in. However, you can still use NextAuth.js for authentication without a database by using OAuth for authentication. If you do not specify a database, [JSON Web Tokens](https://jwt.io/introduction) will be enabled by default.
-
-You **can** skip configuring a database and come back to it later if you want.
-
-For more information about setting up a database, please check out the following links:
-
-* Docs: [next-auth.js.org/adapters/overview](https://next-auth.js.org/adapters/overview)
-* Adapters Repo: [nextauthjs/adapters](https://github.com/nextauthjs/adapters)
-
-### 3. Configure Authentication Providers
-
-- Review and update options in `pages/api/auth/[...nextauth].js` as needed.
-
-- When setting up OAuth, in the developer admin page for each of your OAuth services, you should configure the callback URL to use a callback path of `{server}/api/auth/callback/{provider}`.
-
-  e.g. For Google OAuth you would use: `http://localhost:3000/api/auth/callback/google`
-
-  A list of configured providers and their callback URLs is available from the endpoint `/api/auth/providers`. You can find more information at https://next-auth.js.org/configuration/providers
-
-- You can also choose to specify an **SMTP server** for passwordless sign in via email.
-
-### 4. Start the application
-
-To run your site locally, use:
-
-```
-npm run dev
+# Install dependencies
+yarn
 ```
 
-To run it it production mode, use:
+## Setting up environment variables
 
+Rename `.env.EXAMPLE` to `.env`
+
+Go to your [Twitter Developers Dashboard](https://developer.twitter.com/en/portal/dashboard), create a new project and obtain an API key from the "keys and tokens" section.
+
+Fill in the `TWITTER_SECRET` and `TWITTER_ID` fields.
+
+Then, to your [GitHub Developer Applications > OAuth Apps](https://github.com/settings/developers), create a new project and generate a new API client secret.
+
+Fill in the `GITHUB_ID` and `GITHUB_SECRET` fields
+
+Next, make sure to set your secret inside the `.env` file. You can set this to anything, however, you should preferably choose something secure.
+
+If you're on Linux, you can run `openssl rand -hex 32` or go to https://generate-secret.now.sh/32
+
+## Starting server
+
+```bash
+yarn dev
 ```
-npm build
-npm start
+
+Server should now be running on [localhost](https://localhost:3000)
+
+# 🖼 Gallery
+
+![3](https://user-images.githubusercontent.com/69592270/149421305-a4e5af7f-2846-4637-8b53-af482ffb8e73.gif)
+![1](https://user-images.githubusercontent.com/69592270/149421298-f4d9265a-a02b-4619-b515-b30b9ff67258.gif)
+![2](https://user-images.githubusercontent.com/69592270/149421300-4351b00c-2fc8-4883-9e7e-b13635091d04.gif)
+![4](https://user-images.githubusercontent.com/69592270/149421311-eb349e56-9e1e-46e4-86f1-2a266aaee491.gif)
+
+# 🔧 Tools Used
+
+ - [Next.js](https://github.com/vercel/next.js)
+ - [Prisma](https://www.prisma.io/)
+ - [TypeScript](https://typescriptlang.org)
+ - [Figma](https://figma.com)
+ - [next-themes](https://next-themes-example.vercel.app/)
+ - [Framer Motion](https://framer.com/motion)
+ - [React Spring](https://react-spring.io)
+ - [MongoDB Atlas](https://www.mongodb.com/cloud/atlas/)
+ - [Stitches](https://stitches.dev/)
+ - [NextAuth](https://next-auth.js.org/)
+ - [React Toastify](https://fkhadra.github.io/react-toastify/introduction)
+ - [Feather Icons](https://feathericons.com/)
+ - [Simple Icons](https://simpleicons.org/)
+ - [Kraftuur (made by me!)](https://harshhhdev.github.io/kraftuur)
+
+# 🤞 Contributing
+
+After setting up the project, and making changes:
+
+```git
+git add .
+git commit -m "commit message"
+git push YOUR_REPO_URL YOUR_BRANCH
 ```
-
-### 5. Preparing for Production
-
-You must set the `NEXTAUTH_URL` environment variable with the URL of your site, before deploying to production.
-
-e.g.  in your `.env.local` file - `NEXTAUTH_URL=https://example.com`
-
-To do this with Vercel, you can use the [Vercel project dashboard](https://vercel.com/dashboard) or their cli with the `vc env` command:
-
-```
-vc env add NEXTAUTH_URL production
-```
-
-Do not forget to set the environment variables for the Client ID and Client Secret values for all your configured authentication providers in your hosting providers dashboard, i.e. with Vercel as described above.
-
-## Acknowledgements
-
-<a href="https://vercel.com?utm_source=nextauthjs&utm_campaign=oss">
-<img width="170px" src="https://raw.githubusercontent.com/nextauthjs/next-auth/canary/www/static/img/powered-by-vercel.svg" alt="Powered By Vercel" />
-</a>
-<p align="left">Thanks to Vercel sponsoring this project by allowing it to be deployed for free for the entire NextAuth.js Team</p>
-
-## License
-
-ISC
