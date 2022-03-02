@@ -5,10 +5,6 @@ import TwitterProvider from 'next-auth/providers/twitter'
 
 import prisma from '@lib/prisma'
 
-interface DebuturProfile extends DefaultProfile {
-  login: string
-}
-
 export default NextAuth({
   providers: [
     GithubProvider({
@@ -37,11 +33,7 @@ export default NextAuth({
     // newUser: null // If set, new users will be directed here on first sign in
   },
   callbacks: {
-    async signIn({ user, account, profile, email, credentials }: any) {
-      console.log(user)
-      console.log(profile)
-      console.log(account)
-
+    async signIn({ user, account, profile, email, credentials }) {
       const DebuturUser = await prisma.profile.findUnique({
         where: {
           email: profile.email!,
@@ -50,22 +42,34 @@ export default NextAuth({
 
       if (!DebuturUser) {
         try {
-          await prisma.profile.create({
-            data: {
-              login:
-                profile.login === undefined
-                  ? profile.screen_name.toLowerCase()
-                  : profile.login.toLowerCase(),
-              avatar_url:
-                profile.avatar_url === undefined
-                  ? user.image
-                  : profile.avatar_url,
-              name: profile.name,
-              email: profile.email!,
-              bio:
-                profile.bio === undefined ? profile.description : profile.bio,
-            },
-          })
+          if (profile.screen_name !== undefined) {
+            if (
+              typeof profile.screen_name === 'string' &&
+              typeof profile.login === 'string' &&
+              typeof profile.avatar_url === 'string' &&
+              typeof profile.description === 'string' &&
+              typeof profile.bio === 'string'
+            ) {
+              await prisma.profile.create({
+                data: {
+                  login:
+                    profile.login === undefined
+                      ? profile.screen_name.toLowerCase()
+                      : profile.login.toLowerCase(),
+                  avatar_url:
+                    profile.avatar_url === undefined
+                      ? user.image!
+                      : profile.avatar_url,
+                  name: profile.name,
+                  email: profile.email!,
+                  bio:
+                    profile.bio === undefined
+                      ? profile.description
+                      : profile.bio,
+                },
+              })
+            }
+          }
 
           return true
         } catch (error) {
@@ -78,7 +82,7 @@ export default NextAuth({
     },
     // async redirect({ url, baseUrl }) { return baseUrl },
     // async session({ session, token, user }) { return session },
-    async jwt({ token, user, account, profile, isNewUser }: any) {
+    async jwt({ token, user, account, profile, isNewUser }) {
       const DebuturUser = await prisma.profile.findUnique({
         where: {
           email: token.email!,

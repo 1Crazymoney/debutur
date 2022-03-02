@@ -64,7 +64,7 @@ const Edit: React.FC<UserInfo> = ({
     })
   }
 
-  const UploadImage = (file: string) => {
+  const UploadImage = (file: File) => {
     if (!file) return Error('Please Select An Image!')
 
     const data = new FormData()
@@ -163,8 +163,8 @@ const Edit: React.FC<UserInfo> = ({
       <S.MockInput
         type="file"
         ref={fileUploadRef}
-        onChange={(e: any) => {
-          UploadImage(e.target.files[0])
+        onChange={(e: { target: HTMLInputElement }) => {
+          UploadImage(e.target.files![0])
         }}
       />
       <S.ThemeSelector

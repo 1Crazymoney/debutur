@@ -1,4 +1,4 @@
-import React from 'react'
+import { GetServerSideProps, NextPage } from 'next'
 
 import Header from '@components/SEO'
 import Profile from '@components/Profile/Profile'
@@ -7,11 +7,11 @@ import Error from '@pages/404'
 import * as themes from '@themes/index'
 
 import prisma from '@lib/prisma'
-import { Profile as DebuturProfile } from '.prisma/client'
+import { profile as DebuturProfile } from '.prisma/client'
 
 import { ThemeProvider, useTheme } from 'next-themes'
 
-const UserProfile: React.FC<{ user: DebuturProfile }> = ({ user }) => {
+const UserProfile: NextPage<{ user: DebuturProfile }> = ({ user }) => {
   if (user === null) return <Error />
 
   const { setTheme, resolvedTheme } = useTheme()
@@ -44,10 +44,10 @@ const UserProfile: React.FC<{ user: DebuturProfile }> = ({ user }) => {
   )
 }
 
-export const getServerSideProps = async (context: any) => {
+export const getServerSideProps: GetServerSideProps = async (context) => {
   const user = await prisma.profile.findUnique({
     where: {
-      login: context.params.id,
+      login: context.params?.id?.toString(),
     },
   })
 

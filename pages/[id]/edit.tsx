@@ -1,4 +1,4 @@
-import React from 'react'
+import { GetServerSideProps, NextPage } from 'next'
 
 import { useSession } from 'next-auth/react'
 import { ThemeProvider } from 'next-themes'
@@ -8,11 +8,11 @@ import EditComponent from '@components/Edit/Edit'
 import Loader from '@components/Loader'
 
 import prisma from '@lib/prisma'
-import { Profile as DebuturProfile } from '.prisma/client'
+import { profile as DebuturProfile } from '.prisma/client'
 
 import * as themes from '@themes/index'
 
-const Edit: React.FC<{ user: DebuturProfile }> = ({ user }) => {
+const Edit: NextPage<{ user: DebuturProfile }> = ({ user }) => {
   const { data: session, status } = useSession()
   if (session?.user?.email !== user.email) return <Loader />
 
@@ -46,10 +46,10 @@ const Edit: React.FC<{ user: DebuturProfile }> = ({ user }) => {
   )
 }
 
-export const getServerSideProps = async (context: any) => {
+export const getServerSideProps: GetServerSideProps = async (context) => {
   const user = await prisma.profile.findUnique({
     where: {
-      login: context.params.id,
+      login: context.params?.id?.toString(),
     },
   })
 
