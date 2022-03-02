@@ -12,6 +12,7 @@ const Login: NextPage<{ providers: Provider }> = ({ providers }) => {
 
   return (
     <>
+      {session ? (
         <>
           <SEO title="Get Started" description="Create your Debutur account!" />
           <LoginComponent provider={providers} />
