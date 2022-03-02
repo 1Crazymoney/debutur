@@ -1,6 +1,6 @@
 <p align="center">
   <img src="https://raw.githubusercontent.com/harshhhdev/debutur/master/public/Banner.png" />
-  <a href="https://dbtr.vercel.app/">
+  <a href="https://dbtr.hxrsh.in/">
     <h2 align="center">Debutur</h2>
   </a>
 </p> 
