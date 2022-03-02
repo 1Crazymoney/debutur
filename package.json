@@ -9,6 +9,7 @@
   },
   "homepage": "https://dbtr.hxrsh.in",
   "main": "",
+  "postinstall": "prisma generate",
   "scripts": {
     "dev": "next",
     "build": "next build",
