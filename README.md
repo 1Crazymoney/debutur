@@ -5,7 +5,6 @@
   </a>
 </p> 
 <p align="center">🚀 Create, and personalise your own simple and beautiful homepage</p>
-<p align="center">MongoDB x Dev.to Hackathon 2022</p>
 <p align="center">
   <a href="https://dbtr.hxrsh.in/">Demo</a>
       ·
