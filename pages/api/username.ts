@@ -13,8 +13,8 @@ export default async (req: NextApiRequest, res: NextApiResponse) => {
       avatar_url,
       theme,
       username,
-      buttonLinks,
-      buttonTitles,
+      button_links,
+      button_titles,
     } = req.body
 
     await prisma.profile.findFirst({

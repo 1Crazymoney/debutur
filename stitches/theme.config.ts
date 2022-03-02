@@ -20,7 +20,7 @@ export const { css, styled, globalCss, getCssText, keyframes, createTheme } =
         6: '48px',
       },
       fonts: {
-        main: 'Averta, sans-serif',
+        main: 'DM Sans, sans-serif',
       },
     },
     media: {

@@ -6,8 +6,15 @@ export default async (req: NextApiRequest, res: NextApiResponse) => {
   const prisma = new PrismaClient()
   const session = await getSession({ req })
 
-  const { name, bio, avatar_url, theme, username, buttonLinks, buttonTitles } =
-    req.body
+  const {
+    name,
+    bio,
+    avatar_url,
+    theme,
+    username,
+    button_links,
+    button_titles,
+  } = req.body
 
   if (session) {
     await prisma.profile.update({
@@ -19,8 +26,8 @@ export default async (req: NextApiRequest, res: NextApiResponse) => {
         bio: bio,
         avatar_url: avatar_url,
         theme: theme,
-        buttonLinks: buttonLinks,
-        buttonTitles: buttonTitles,
+        button_links: button_links,
+        button_titles: button_titles,
       },
     })
 

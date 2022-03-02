@@ -30,7 +30,7 @@ export default NextAuth({
     secret: process.env.SECRET,
   },
   pages: {
-    signIn: '/user/login',
+    signIn: '/',
     // signOut: '/auth/signout', // Displays form with sign out button
     // error: '/auth/error', // Error code passed in query string as ?error=
     // verifyRequest: '/auth/verify-request', // Used for check email page

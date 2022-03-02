@@ -44,13 +44,6 @@ const globalStyle = globalCss({
   '.disabled': {
     display: 'none !important',
   },
-  '@font-face': {
-    fontFamily: 'Averta',
-    src: 'url(/Averta-Regular.ttf)',
-    fontStyle: 'normal',
-    fontWeight: 400,
-    fontDisplay: 'swap',
-  },
   '.ring.hovered': {
     width: 80,
     height: 80,

@@ -7,7 +7,7 @@
 <p align="center">🚀 Create, and personalise your own simple and beautiful homepage</p>
 <p align="center">MongoDB x Dev.to Hackathon 2022</p>
 <p align="center">
-  <a href="https://dbtr.vercel.app/">Demo</a>
+  <a href="https://dbtr.hxrsh.in/">Demo</a>
       ·
   <a href="https://dev.to/harshhhdev/debutur-fa">Dev.to</a>
  </p>
@@ -69,7 +69,7 @@ Server should now be running on [localhost](https://localhost:3000)
 - [next-themes](https://next-themes-example.vercel.app/)
 - [Framer Motion](https://framer.com/motion)
 - [React Spring](https://react-spring.io)
-- [MongoDB Atlas](https://www.mongodb.com/cloud/atlas/)
+- [CockroachDB](https://www.cockroachlabs.com/)
 - [Stitches](https://stitches.dev/)
 - [NextAuth](https://next-auth.js.org/)
 - [React Toastify](https://fkhadra.github.io/react-toastify/introduction)

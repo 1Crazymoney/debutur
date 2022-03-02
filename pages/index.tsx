@@ -2,12 +2,13 @@ import React from 'react'
 import { useRouter } from 'next/router'
 
 import SEO from '@components/SEO'
-import Home from '@components/Home/Home'
+import LoginComponent from '@components/Login/Login'
 
 import { getProviders, useSession } from 'next-auth/react'
+import { Provider } from 'next-auth/providers'
 import Loading from '@components/Loader'
 
-const Login: React.FC = () => {
+const Login: React.FC<{ providers: Provider }> = ({ providers }) => {
   const router = useRouter()
 
   const { data: session, status } = useSession()
@@ -29,11 +30,8 @@ const Login: React.FC = () => {
     <>
       {done ? (
         <>
-          <SEO
-            title="Home"
-            description="🚀 Create, and personalise your own simple and beautiful homepage"
-          />
-          <Home />
+          <SEO title="Get Started" description="Create your Debutur account!" />
+          <LoginComponent provider={providers} />
         </>
       ) : (
         <Loading />

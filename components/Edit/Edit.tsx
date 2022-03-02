@@ -129,8 +129,8 @@ const Edit: React.FC<UserInfo> = ({
       bio: bioInputRef.current!.value,
       avatar_url: url,
       theme: themeInputRef.current!.value,
-      buttonTitles: options.map((option) => option.text),
-      buttonLinks: options.map((option) => option.href),
+      button_titles: options.map((option) => option.text),
+      button_links: options.map((option) => option.href),
     })
 
     router.push(`/${username}`)

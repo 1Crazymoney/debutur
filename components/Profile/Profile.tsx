@@ -11,12 +11,15 @@ const Profile: React.FC<{
   name: string
   bio: string
   email: string
-  buttonTitles: string[]
-  buttonLinks: string[]
-}> = ({ id, avatar, name, bio, email, buttonTitles, buttonLinks }) => {
+  button_titles: string[]
+  button_links: string[]
+}> = ({ id, avatar, name, bio, email, button_titles, button_links }) => {
   const { data: session, status } = useSession()
 
-  let Buttons = buttonTitles.map((t, i) => ({ href: buttonLinks[i], text: t }))
+  let Buttons = button_titles.map((t, i) => ({
+    href: button_links[i],
+    text: t,
+  }))
 
   return (
     <S.ProfileContainer>

@@ -1,22 +1,21 @@
 datasource db {
-  provider = "mongodb"
+  provider = "cockroachdb"
   url      = env("DATABASE_URL")
 }
 
 generator client {
   provider        = "prisma-client-js"
-  previewFeatures = ["mongoDb"]
+  previewFeatures = ["cockroachdb"]
 }
 
-model Profile {
-  id         String @id @default(dbgenerated()) @map("_id") @db.ObjectId
-  login      String @unique
-  avatar_url String
-  name       String @default("Debutur User")
-  email      String @unique
-  bio        String @default("Welcome to Debutur. Edit your profile to get started")
-  theme      String @default("light")
-
-  buttonLinks  String[]
-  buttonTitles String[]
+model profile {
+  id            BigInt   @id(map: "primary") @default(autoincrement())
+  login         String   @unique
+  avatar_url    String
+  name          String   @default("Debutur User")
+  email         String   @unique
+  bio           String   @default("Welcome to Debutur. Edit your profile to get started")
+  theme         String   @default("light")
+  button_links  String[]
+  button_titles String[]
 }

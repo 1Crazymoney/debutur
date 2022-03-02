@@ -37,8 +37,8 @@ const UserProfile: React.FC<{ user: DebuturProfile }> = ({ user }) => {
         name={user.name}
         bio={user.bio}
         email={user.email}
-        buttonTitles={user.buttonTitles}
-        buttonLinks={user.buttonLinks}
+        button_titles={user.button_titles}
+        button_links={user.button_links}
       />
     </ThemeProvider>
   )

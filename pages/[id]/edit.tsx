@@ -39,8 +39,8 @@ const Edit: React.FC<{ user: DebuturProfile }> = ({ user }) => {
         bio={user.bio}
         avatar={user.avatar_url}
         theme={user.theme}
-        links={user.buttonLinks}
-        titles={user.buttonTitles}
+        links={user.button_links}
+        titles={user.button_titles}
       />
     </ThemeProvider>
   )
