@@ -1,7 +1,8 @@
 import NextAuth, { DefaultProfile } from 'next-auth'
 import GithubProvider from 'next-auth/providers/github'
-// import GoogleProvider from "next-auth/providers/google"
 import TwitterProvider from 'next-auth/providers/twitter'
+
+import { v4 as uuidv4 } from 'uuid'
 
 import prisma from '@lib/prisma'
 
@@ -52,6 +53,7 @@ export default NextAuth({
             ) {
               await prisma.profile.create({
                 data: {
+                  id: uuidv4(),
                   login:
                     profile.login === undefined
                       ? profile.screen_name.toLowerCase()
