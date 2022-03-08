@@ -4,16 +4,21 @@ import * as anims from '@anims/index'
 import * as S from './Profile.style'
 
 import { useSession } from 'next-auth/react'
+import { profile } from '@prisma/client'
 
-const Profile: React.FC<{
-  id: string
-  avatar: string
-  name: string
-  bio: string
-  email: string
-  button_titles: string[]
-  button_links: string[]
-}> = ({ id, avatar, name, bio, email, button_titles, button_links }) => {
+type UserProfile = Pick<
+  profile,
+  'id' | 'avatar_url' | 'name' | 'bio' | 'button_links' | 'button_titles'
+>
+
+const Profile: React.FC<UserProfile> = ({
+  id,
+  avatar_url,
+  name,
+  bio,
+  button_titles,
+  button_links,
+}) => {
   const { data: session, status } = useSession()
 
   let Buttons = button_titles.map((t, i) => ({
@@ -30,8 +35,8 @@ const Profile: React.FC<{
       >
         <S.Avatar
           src={
-            avatar.startsWith('https://pbs.twimg.com')
-              ? avatar.replace('_normal', '')
+            avatar_url.startsWith('https://pbs.twimg.com')
+              ? avatar_url.replace('_normal', '')
               : ''
           }
           alt="profile picture"
@@ -65,7 +70,7 @@ const Profile: React.FC<{
             {btn.text}
           </S.Button>
         ))}
-        {session?.user?.email === email ? (
+        {session?.user?.image === avatar_url ? (
           <S.Button
             variants={anims.FadeReverse}
             whileHover={{ scale: 1.07 }}

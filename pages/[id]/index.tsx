@@ -33,10 +33,9 @@ const UserProfile: NextPage<{ user: DebuturProfile }> = ({ user }) => {
       <Header title={user.name} description={user.bio} />
       <Profile
         id={user.login}
-        avatar={user.avatar_url}
+        avatar_url={user.avatar_url}
         name={user.name}
         bio={user.bio}
-        email={user.email}
         button_titles={user.button_titles}
         button_links={user.button_links}
       />

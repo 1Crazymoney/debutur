@@ -14,7 +14,7 @@ import * as themes from '@themes/index'
 
 const Edit: NextPage<{ user: DebuturProfile }> = ({ user }) => {
   const { data: session, status } = useSession()
-  if (session?.user?.email !== user.email) return <Loader />
+  if (session?.user?.image !== user.avatar_url) return <Loader />
 
   return (
     <ThemeProvider
