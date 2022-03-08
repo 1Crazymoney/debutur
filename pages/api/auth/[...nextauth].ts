@@ -70,6 +70,16 @@ export default NextAuth({
       return true
     },
     // async redirect({ url, baseUrl }) { return baseUrl },
+    async session({ session, token, user }) {
+      const currentUser = await prisma.profile.findUnique({
+        where: {
+          avatar_url: session.user?.image!,
+        },
+      })
+
+      session.login = currentUser?.login
+      return session
+    },
   },
   events: {},
   debug: false,
