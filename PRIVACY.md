@@ -4,7 +4,7 @@ Thank you for choosing to be part of our community at Debutur ("Company," "we," 
 
 This privacy notice describes how we might use your information if you:
 
-- Visit our website at https://debutur.hxrsh.in
+- Visit our website at https://dbtr.hxrsh.in
 - Engage with us in other related ways ― including any sales, marketing, or events
 
 In this privacy notice, if we refer to:

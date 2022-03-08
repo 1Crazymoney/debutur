@@ -51,9 +51,8 @@ const NotFound: React.FC = () => {
         <Description>
           Some things just don’t go the way you want. Like the page you’re
           looking for is gone, or the link is broken. Check the URL and try
-          reloading the page - or go back to{' '}
-          <Link href="/">debutur.hxrsh.in</Link> to customise and create your
-          own profile!
+          reloading the page - or go back to <Link href="/">dbtr.hxrsh.in</Link>{' '}
+          to customise and create your own profile!
         </Description>
       </ContentContainer>
     </Container>

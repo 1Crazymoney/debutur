@@ -9,11 +9,10 @@ datasource db {
 }
 
 model profile {
-  id            String   @id(map: "primary") @db.Uuid
+  id            String   @id(map: "primary") @default(dbgenerated("gen_random_uuid()")) @db.Uuid
   login         String   @unique @db.VarChar(255)
   avatar_url    String   @db.VarChar(255)
   name          String   @default("Debutur User") @db.VarChar(255)
-  email         String   @unique @db.VarChar(255)
   bio           String   @default("Welcome to Debutur. Edit your profile to get started")
   theme         String   @default("light") @db.VarChar(255)
   button_links  String[]

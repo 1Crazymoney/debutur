@@ -29,7 +29,11 @@ const Profile: React.FC<{
         variants={anims.ScaleContainer}
       >
         <S.Avatar
-          src={avatar}
+          src={
+            avatar.startsWith('https://pbs.twimg.com')
+              ? avatar.replace('_normal', '')
+              : ''
+          }
           alt="profile picture"
           draggable="false"
           initial={{ scale: 0, rotate: 180 }}
