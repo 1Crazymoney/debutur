@@ -13,9 +13,9 @@ const Header: React.FC<{ title: string; description: string }> = ({
       <meta property="twitter:title" content={title} />
       <meta name="description" content={description} />
       <meta property="og:type" content="website" />
-      <meta property="og:url" content="https://debutur.herokuapp.com/" />
+      <meta property="og:url" content="https://dbtr.hxrsh.in/" />
       <meta property="og:description" content={description} />
-      <meta property="twitter:url" content="https://debutur.herokuapp.com/" />
+      <meta property="twitter:url" content="https://dbtr.hxrsh.in/" />
       <meta property="twitter:description" content={description} />
       <meta name="viewport" content="width=device-width, initial-scale=1.0" />
       <meta httpEquiv="X-UA-Compatible" content="ie=edge" />
